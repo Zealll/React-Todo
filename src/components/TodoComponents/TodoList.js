@@ -6,7 +6,7 @@ import Todo from './Todo'
 
 const TodoList = props => {
     return (
-        {props.todos.map(tasks => <Todo )}
+        // {props.todos.map(tasks => <Todo )}
     )
 }
 
