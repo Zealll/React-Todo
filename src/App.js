@@ -32,6 +32,7 @@ class App extends React.Component {
         if (taskId === task.id) {
           return {...task, completed: !task.completed}
         }
+        return task;
       })
     })
   }

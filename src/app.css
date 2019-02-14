@@ -132,6 +132,7 @@ form {
     transition: transform 0s;
   }
 
-  .completed {
-    text-decoration: line-through;
+  .todo-style.completed {
+    text-decoration: solid red line-through;
+    
   }
