@@ -1,43 +1,47 @@
-import React from 'react';
-import TodoForm from './components/TodoComponents/TodoForm'
-import TodoList from './components/TodoComponents/TodoList'
-import './app.css'
+import React from "react";
+import TodoForm from "./components/TodoComponents/TodoForm";
+import TodoList from "./components/TodoComponents/TodoList";
+import "./app.css";
 
-
-const todos = []
 class App extends React.Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
-      todos: todos,
-      task: "", 
-      
-    }
+      todos: [],
+      input: ""
+    };
   }
 
   addTask = e => {
     e.preventDefault();
     const newTask = {
-      task: this.state.task,
+      task: this.state.input,
       id: Date.now(),
-      completed: false,
-    }
-    
+      completed: false
+    };
+
     this.setState({
       todos: [...this.state.todos, newTask],
-      task: "",
+      input: ""
     });
-  
   };
+
+  toggleTask = taskId => {
+    this.setState({
+      todos: this.state.todos.map(task => {
+        if (taskId === task.id) {
+          return {...task, completed: !task.completed}
+        }
+      })
+    })
+  }
 
   handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
- 
-  
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
@@ -49,10 +53,9 @@ class App extends React.Component {
         <TodoForm
           addTask={this.addTask}
           handleChange={this.handleChange}
+          input={this.state.input}
         />
-        <TodoList 
-          list={this.state.todos}
-        />
+        <TodoList list={this.state.todos} toggleTask={this.toggleTask} />
       </div>
     );
   }
