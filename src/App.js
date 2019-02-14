@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm'
-// import TodoList from './components/TodoComponents/TodoList'
+import TodoList from './components/TodoComponents/TodoList'
+import './app.css'
 
 
 const todos = []
@@ -9,24 +10,33 @@ class App extends React.Component {
     super();
     this.state = {
       todos: todos,
-      task: "",
-      // id: Date.now(),
-      // completed: false,
+      task: "", 
+      
     }
   }
 
-  // addTask = e => {
-  //   e.preventDefault();
-  //   // console.log(e.target);
+  addTask = e => {
+    e.preventDefault();
+    const newTask = {
+      task: this.state.task,
+      id: Date.now(),
+      completed: false,
+    }
+    
+    this.setState({
+      todos: [...this.state.todos, newTask],
+      task: "",
+    });
+  
+  };
 
-  //   const newTask = {
-  //     task: this.state.task,
-  //   }
-  // };
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  // this.setState({
-  //   todos: [...this.state.todos, newTask],
-  // });
+ 
   
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -34,10 +44,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="appDiv">
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm />
-        {/* <TodoList /> */}
+        <TodoForm
+          addTask={this.addTask}
+          handleChange={this.handleChange}
+        />
+        <TodoList 
+          list={this.state.todos}
+        />
       </div>
     );
   }
