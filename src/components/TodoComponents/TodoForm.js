@@ -10,7 +10,10 @@ const TodoForm = props => {
                 name="input"
                 placeholder="...ToDo"
             />
-            <button type="submit">Add List</button>
+            <div className="buttonDiv">
+                <button type="submit">Add List</button>
+                <button onClick={props.clearTask}>Clear List</button>  
+            </div>
         </form>
     )
 }

@@ -66,6 +66,7 @@ form {
     outline: none;
     cursor: pointer;
     transition: box-shadow 0.2s;
+    width: 105px;
   }
   
   button::-moz-focus-inner {
@@ -135,4 +136,11 @@ form {
   .todo-style.completed {
     text-decoration: solid red line-through;
     
+  }
+
+  .buttonDiv{
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
   }
