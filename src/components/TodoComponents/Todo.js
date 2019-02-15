@@ -4,7 +4,10 @@ const Todo = props => {
     return (
         <div className={`todo-style${props.tasks.completed ? ' completed' : ''}`}
         onClick={() => props.toggleTask(props.tasks.id)}>
-            <h1>{props.tasks.task}</h1>
+            <div className="hOneDiv">
+                <h1>{props.tasks.task}</h1>
+            </div>
+            
         </div>
     )
 }

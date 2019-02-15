@@ -1,3 +1,7 @@
+body{
+  background: url('images/cool-background.png');
+}
+
 .appDiv{
     width: 400px;
     margin:0 auto;
@@ -5,6 +9,14 @@
 
 h2 {
   text-align: center;
+  color: white;
+}
+
+.hOneDiv{
+  color: rgb(153,153,153);
+  background: white;
+  /* display:flex;
+  flex-wrap: nowrap; */
 }
 
 

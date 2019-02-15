@@ -14,6 +14,10 @@ class App extends React.Component {
 
   addTask = e => {
     e.preventDefault();
+    if (this.state.input === '' ) {
+    return null
+    }
+      
     const newTask = {
       task: this.state.input,
       id: Date.now(),
