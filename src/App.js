@@ -4,8 +4,8 @@ import TodoList from "./components/TodoComponents/TodoList";
 import "./app.css";
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       todos: [],
       input: ""

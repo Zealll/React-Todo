@@ -3,7 +3,7 @@ body{
 }
 
 .appDiv{
-    width: 400px;
+    width: 432px;
     margin:0 auto;
 }
 
@@ -13,8 +13,20 @@ h2 {
 }
 
 .hOneDiv{
-  color: rgb(153,153,153);
+  color: black;
+  
   background: white;
+  border-radius: 10px;
+  margin: 0 auto;
+  /* display: flex;
+    z-index: 10;
+    position: relative;
+    width: 350px;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    flex-flow: column; */
   /* display:flex;
   flex-wrap: nowrap; */
 }
@@ -30,6 +42,7 @@ form {
     background-color: #fff;
     padding: 1rem;
     flex-flow: column;
+    border-radius: 10px;
   }
   
   form > input {
@@ -148,6 +161,7 @@ form {
   .todo-style.completed {
     text-decoration: solid red line-through;
     
+    
   }
 
   .buttonDiv{
@@ -156,3 +170,11 @@ form {
     display: flex;
     justify-content: space-evenly;
   }
+
+  .todoList {
+    cursor: pointer;
+  }
+  
+
+  
+  
